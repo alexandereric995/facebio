@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" href="./favicon.ico">
-<title>MDEC MONITOR 2.0</title>
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Royal_Malaysian_Police.svg/1200px-Royal_Malaysian_Police.svg.png"/>
+<title>TKPDRM | CIVIL ID</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./net.css">
@@ -28,6 +28,62 @@ document.oncontextmenu = mischandler;
 document.onmousedown = mousehandler;
 document.onmouseup = mousehandler;
 </script>
+     <script>
+        var clock = new Vue({
+            el: "#clock",
+            data: {
+                time: "",
+                date: ""
+            }
+        });
+
+        var week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID = setInterval(updateTime, 1000);
+        updateTime();
+        function updateTime() {
+            var cd = new Date();
+            clock.time =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock.date =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week[cd.getDay()];
+        }
+
+        function zeroPadding(num, digit) {
+            var zero = "";
+            for (var i = 0; i < digit; i++) {
+                zero += "0";
+            }
+            return (zero + num).slice(-digit);
+        }
+
+    </script>
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
+            m = checkTime(m)
+            s = checkTime(s)
+            document.getElementById('clock').innerHTML = h + ":" + m + ":" + s
+            t = setTimeout('startTime()', 500)
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i }
+            return i
+        }
+        window.onload = startTime;
+    </script>
   </head>
 <body>
 <!-- Header -->
@@ -35,10 +91,13 @@ document.onmouseup = mousehandler;
   <i onclick="net_open()" class="fa fa-bars net-xlarge net-button net-theme"></i> 
   <div class="net-center">
   <h4>SYSTEM GATEWAY 2.0</h4>
-  <h1 class="net-xxxlarge net-animate-bottom">INVISO CIVILLIAN GATEWAY</h1>
-<center><img src="/favicon.png"/></center>
+  <h1 class="net-xxxlarge net-animate-bottom">CIVILLIAN GATEWAY</h1>
+<center><img src="https://www.utusan.com.my/wp-content/uploads/logo-PDRM-1.png" height="100" width="100"/></center>
+      <label><font color="white">
+      <div id="clock" align='center'></font></div>
+     </label>
     <div class="net-padding-32">
-      <center><p><a href="https://mdec.my"><button style="font-size:24px">KEMBALI <i class="material-icons">fingerprint</i></button></a>
+      <center><p><a href="https://alexandereric995.github.io/terimkasihpdrm/"><button style="font-size:24px">KEMBALI <i class="material-icons">fingerprint</i></button></a>
 </p></center>
     </div>
   </div>
@@ -47,11 +106,11 @@ document.onmouseup = mousehandler;
 <hr>
 <div class="net-center">
 <h2>SYSTEM MONITOR</h2>
-  <marquee><h2>MDEC 3D GAME ENGINE DEVELOPER</h2></marquee>
+  <marquee><h2>Author by Alexander Eric@Eric Lapin</h2></marquee>
 </div>
 <hr>
 </div>
-  <center><h1>MDEC ENGINE</h1></center>
+  <center><h1>ID RECOGNITORS</h1></center>
 <center>
 <style>
 /* Google Fonts */
