@@ -11,17 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // cascade params
     const min_size_of_cascade_param = 30;
 
-    // 顔画像キャプチャー先canvasのサイズ係数
     const cliped_size_factor = 1.0;
 
-    // cliped_canvas context
     const lw = 4; // lineWidth
     const ss = 'rgba(0, 255, 0, 0.6)'; // strokeStyle
 
     /**
-     | -------------------------------------------------------------------------
-     | 前処理
-     | -------------------------------------------------------------------------
+     | EDIT BY ALEXANDER ERIC@ERIC LAPIN
      */
     // video
     let video    = document.getElementById('camera');
@@ -59,21 +55,18 @@ document.addEventListener('DOMContentLoaded', function () {
         load();
     });
 
-    // グレースケール変換
     const for_grayscale = document.getElementById('to-grayscale');
     let switch_grayscale = for_grayscale.value !== "0";
     for_grayscale.addEventListener('change', function(e){
         switch_grayscale = this.checked;
     });
-
-    // debug用
     const for_debug = document.getElementById('debug');
     let is_debug = for_debug.value !== "0";
     for_debug.addEventListener('change', function(e){
         is_debug = this.checked;
     });
 
-    // 顔部分のマージン設定
+ 
     let adjustment_of_x; // x座標の調整 = -15;
     let adjustment_of_y; // y座標の調整 = -15;
     let adjustment_of_w; // 横幅の調整  = Math.abs(adjustment_of_x * 2);
